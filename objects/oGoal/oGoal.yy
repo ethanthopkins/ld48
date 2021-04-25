@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Storyline",
+    "path": "folders/Objects/Storyline.yy",
   },
   "resourceVersion": "1.0",
   "name": "oGoal",

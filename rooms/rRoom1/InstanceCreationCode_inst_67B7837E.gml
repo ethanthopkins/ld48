@@ -1,1 +1,0 @@
-oRonald.Col = id;

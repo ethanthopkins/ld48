@@ -1,1 +1,0 @@
-oClifford.Col = id;

@@ -1,0 +1,9 @@
+val = 0;
+valSp = .005;
+Color = c_maroon;
+Min = .2;
+Max = .4;
+in = true;
+destroy = false;
+ready = false;
+set = false;

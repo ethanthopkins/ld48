@@ -3,8 +3,7 @@ draw_rectangle(global.windowWidth*.1,global.windowHeight*.9,global.windowWidth*.
 draw_set_color(textColor)
 draw_rectangle(global.windowWidth*.1,global.windowHeight*.9,global.windowWidth*.9,global.windowHeight*.6,true);
 
-draw_x=global.windowWidth*.15;
-draw_y=global.windowHeight*.75;
+
 
 if (textProgress <= length)
 {
@@ -24,15 +23,35 @@ for (var i = 1; i <= length; ++i)
 	//GET POSITION OF CHAR IN STRING
 	var strPos = string_pos(str[i],myString);
 	//GET PX LENGTH OF STRING AS IT'S WRITTEN
-	length_so_far=string_width(string_copy(myString,1,i));		
+	length_so_far=string_width(string_copy(myString,1,i));	
     //DRAW TEXT CHARACTER BY CHARACTER
 	if (textProgress > i)	
 	{
+		var sLength = string_width(myString);
+		//show_debug_message("length_so_far: " + string(length_so_far) + "width: " + string(width));
+		if (length_so_far >= width)
+		{
+			if (!set1)
+			{
+				diff = length_so_far - width;
+				show_debug_message(string(diff));
+				set1 = true;	
+			}
+			var sLength_so_far;
+			sLength_so_far=string_width(string_copy(myString,1,i))
+			draw_text(
+			global.windowWidth*.15+sLength_so_far+random_range(-intensity,intensity)-width-diff,
+			global.windowHeight*.8 + random_range(-intensity,intensity),
+			str[i]
+			);
+		}else
+		{
 		draw_text(
 		draw_x+length_so_far+random_range(-intensity,intensity),
 		draw_y+random_range(-intensity,intensity),
 		str[i],
 		);
+		}
 	}
 	if (rsp1Case != undefined) && (rsp1Text != undefined) && (rsp2Case != undefined) && (rsp2Text != undefined)
 	{

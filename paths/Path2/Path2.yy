@@ -7,8 +7,8 @@
     {"speed":100.0,"x":1184.0,"y":320.0,},
   ],
   "parent": {
-    "name": "Lonely Sounds",
-    "path": "Lonely Sounds.yyp",
+    "name": "Paths",
+    "path": "folders/Paths.yy",
   },
   "resourceVersion": "1.0",
   "name": "Path2",
