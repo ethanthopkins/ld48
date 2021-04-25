@@ -1,0 +1,2 @@
+Col = undefined;
+atLoc = false;

@@ -1,0 +1,86 @@
+Working typerwriter shaky text
+CREATE:
+myString="this is a test string";
+text = "test";
+oldLine = 0;
+nextLine = 0;
+set = false;
+//show_debug_message("set" + string(set));
+textProgress = 0;
+t = 0;
+textSpeed = .25;
+//global.playerPaused = true;
+textColor = c_white;
+width = global.windowWidth*.9; //max width text can have
+
+DESTROY
+if (nextLine = 0) with (oLouis) alarm[0] = room_speed*1;
+
+STEP
+/*
+if (keyboard_check_pressed(vk_space))
+{
+	show_debug_message("next line" + string(nextLine));
+	show_debug_message("old line" + string(oldLine));
+	if (textProgress >= stringLength)
+	{
+		if (nextLine != oldLine) oldLine = nextLine;	
+		if (oldLine == nextLine)
+		{
+			if (nextLine != 0) scGetTheText(nextLine)
+			instance_destroy();	
+		}
+	}
+	if (textProgress < stringLength)
+	{
+		textProgress = stringLength;
+	}
+}
+
+DRAW GUI
+draw_set_color(c_black)
+draw_rectangle(global.windowWidth*.1,global.windowHeight*.9,global.windowWidth*.9,global.windowHeight*.6,false);
+draw_set_color(c_white)
+draw_rectangle(global.windowWidth*.1,global.windowHeight*.9,global.windowWidth*.9,global.windowHeight*.6,true);
+
+
+draw_x=global.windowWidth*.15;
+draw_y=global.windowHeight*.65;
+
+//intensity = 1; //shakeyness
+
+//get how long the string is in terms of width
+var 
+
+if (textProgress <= length)
+{
+	textProgress += textSpeed;
+}
+
+draw_set_color(textColor);
+draw_set_font(font);
+draw_set_halign(fa_right);
+ //how far to offset the text
+for (var i = 1; i <= length; ++i) 
+{
+	var str = 0;
+	str[i] = string_char_at(myString, i);
+	//show_debug_message(str[i]);
+	var strPos = string_pos(str[i],myString);
+	length_so_far=string_width(string_copy(myString,1,i));	
+	show_debug_message("length_so_far: " + string(length_so_far) + "textBoxWidth: " + string(textBoxWidth));
+    if (textProgress > i)	draw_text(draw_x+length_so_far+random_range(-intensity,intensity),draw_y+random_range(-intensity,intensity),str[i]);
+}
+
+
+ //how far to offset the text
+for (var i = 1; i <= length; ++i) 
+{
+	var str = 0;
+	str[i] = string_char_at(myString, i);
+	//show_debug_message(str[i]);
+	var strPos = string_pos(str[i],myString);
+	show_debug_message("prog: " + string(textProgress) + "str: " + string(strPos));
+	length_so_far=string_width(string_copy(myString,1,i));
+    if (textProgress > i)	draw_text(draw_x+length_so_far+random_range(-intensity,intensity),draw_y+random_range(-intensity,intensity),str[i]);
+}
