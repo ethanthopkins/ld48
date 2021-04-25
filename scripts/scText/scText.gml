@@ -12,16 +12,24 @@ function scGetTheCharacter(instance)
 	if (instance_exists(oRonald)) var _oRonald = oRonald.id; else _oRonald = undefined;
 	if (instance_exists(oClifford)) var _oClifford = oClifford.id; else _oClifford = undefined;
 	if (instance_exists(oKnife)) var _oKnife = oKnife.id; else _oKnife = undefined;
+	if (instance_exists(oTape)) var _oTape = oTape.id; else _oTape = undefined;
 	switch (instance)
 	{
 		case noone: return; 
 		case _oKnife: return(1); break;
 		case _oClifford: 
-			if (global.firstDay) return(8); else return(0);
+			if (global.firstDay) return(8); 
+			if (global.underAttack) return;
+			if (_oClifford.quickTheDoor) return(13);
+			if (_oClifford.weLockedIn) return(15);
 			break;
 		case _oRonald: 
-			if (global.firstDay) return(8); else return(0); 
+			if (global.firstDay) return(8); 
+			if (global.underAttack) return;
+			if (_oRonald.quickTheDoor) return(17);
+			if (_oRonald.weLockedIn) return(19);
 			break;
+		case _oTape: return(23);
 		default: return;
 	}
 }
@@ -48,6 +56,33 @@ function scGetTheText(_line)
 		case 10: scDrawTheObject("You may enter the cabin.",11,global.medium,c_white,fClifford,.1); break;
 		case 11: scDrawTheObject("Supplies are to the end left.",12,global.medium,c_white,fClifford,.1); break;
 		case 12: global.firstDay = false; global.playerPaused = false; break;
+		case 13: scDrawTheObject("We--We're locked in.......",14,global.medium,c_blue,fClifford,.1); break;
+		case 14: 
+			scDrawTheObject("........................",0,global.medium,c_blue,fClifford,1); 
+			oClifford.quickTheDoor = false;
+			oClifford.weLockedIn = true; 
+			break;
+		case 15: scDrawTheObject("That window is leaking!",16,global.medium,c_blue,fClifford,.1); break;
+		case 16: scDrawTheObject("Need to find someth'n to patch it.",22,global.medium,c_blue,fClifford,.1); break;
+		case 17: scDrawTheObject("...the door just..closed in..",18,global.medium,c_blue,fRonald,.5); break;
+		case 18: 
+			scDrawTheObject("........................",0,global.medium,c_blue,fRonald,1); 
+			oRonald.quickTheDoor = false;
+			oRonald.weLockedIn = true; 
+			break;
+		case 19: scDrawTheObject("t-t-tape, tape could patch er",20,global.medium,c_white,fRonald,.1); break;
+		case 20: scDrawTheObject("I--I think there's some ...",26,global.medium,c_white,fRonald,.1); break;
+		case 21: scDrawTheObject("YES, the ship's bottom right.",0,global.medium,c_white,fRonald,.1); break;
+		case 22: scDrawTheObject("Louis, check with Ronald.",0,global.medium,c_white,fClifford,.1); break;
+		case 23: scDrawTheObject("A Large Spool of Tape.",24,global.medium,c_white,fDefault,.1); break;
+		case 24: scDrawTheObject("Take?",0,global.medium,c_white,fDefault,0,25,"Yes",0,"No"); break;
+		case 25: 
+			scDrawTheObject("You take the tape.",0,global.medium,c_white,fDefault,0); 
+			global.tape = true;
+			with (oTape) instance_destroy();
+			break;
+		case 26: scDrawTheObject("..  ..  .... hmm ..",21,global.medium,c_white,fRonald,.1); break;
+
 		default: return;
 	}
 }

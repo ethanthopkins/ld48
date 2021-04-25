@@ -50,16 +50,15 @@ for (var i = 1; i <= length; ++i)
 			default: return;
 			case 0: 
 				draw_arrow(global.windowWidth * .65,global.windowHeight*.7,global.windowWidth * .7,global.windowHeight*.7,5); 
-				optionValue = rsp1Case;
+				//optionValue = rsp1Case;
+				if (!global.justForShow) nextLine = rsp1Case;
 				break;
 			case 1: 
 				draw_arrow(global.windowWidth * .65,global.windowHeight*.8,global.windowWidth * .7,global.windowHeight*.8,5); 
 				optionValue = rsp2Case;
+				//if (!global.justForShow) if (select) nextLine = optionValue;
+				if (!global.justForShow) nextLine = rsp2Case;
 				break;
-		}
-		if (!global.justForShow)
-		{
-			if (select) nextLine = optionValue;
 		}
 		
 		draw_text(

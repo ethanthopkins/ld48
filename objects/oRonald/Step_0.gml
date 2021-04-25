@@ -11,5 +11,10 @@ if (global.underAttack)
 		path_start(Path2,3,path_action_continue,true);	
 	}
 }
+if (quickTheDoor)
+	{
+		path_end();
+		mp_potential_step(1152,160,2,false);	
+	}
 Col.x = x;
 Col.y = y;

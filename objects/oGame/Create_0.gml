@@ -3,6 +3,7 @@
 	global.pathBlocker = undefined;
 	global.underAttack = false;
 	global.justForShow = false;
+	global.tape = false
 #endregion
 global.iCamera = instance_create_layer(0,0,layer,oCamera);
 set = false;
