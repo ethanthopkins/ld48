@@ -1,4 +1,10 @@
 image_index = 0;
+if (x > xprevious) Dir = 0; 
+if (x < xprevious) Dir = 180; 
+if (y > yprevious) Dir = 270; 
+if (y < yprevious) Dir = 90; 
+show_debug_message(Dir);
+UpdateSpriteIndexRonald()
 if (!global.firstDay) && (!atLoc)
 {
 	mp_potential_step(1184,192,.5,false);

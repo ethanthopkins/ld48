@@ -17,21 +17,27 @@ function GetPlayerMovement()
 	y += vMove * walkSpeed;
 	
 	#region What Direction
-	image_speed = 0;
-	if (hMove != 0)
+	if (hMove != 0) || (vMove != 0)
 	{
-		if (hMove = -1) playerDirection = 180;
-		if (hMove = 1) playerDirection = 0;
-		//show_debug_message(playerDirection);
-		UpdateSpriteIndex();
-		PlayerAnimateSprite();
-	}
-	if (vMove != 0)
+		if (hMove != 0)
+		{
+			if (hMove = -1) playerDirection = 180;
+			if (hMove = 1) playerDirection = 0;
+			UpdateSpriteIndex();
+		}
+		if (vMove != 0)
+		{
+			if (vMove = -1) playerDirection = 90;
+			if (vMove = 1) playerDirection = 270;
+			UpdateSpriteIndex();	
+		}
+			var Min;
+		var Max;
+		//show_debug_message(cardinalDirection);
+	} else
 	{
-		if (vMove = -1) playerDirection = 90;
-		if (vMove = 1) playerDirection = 270;
-		//show_debug_message(playerDirection);
-		UpdateSpriteIndex();	
+		image_index = 0; 
+		image_speed =0;
 	}
 	#endregion
 }
@@ -42,9 +48,40 @@ function GetPlayerCollision()
 }
 function UpdateSpriteIndex()
 {	
+	image_speed = .25;
 	direction = playerDirection;
 	cardinalDirection = round(playerDirection/90);
-	image_index = (cardinalDirection)
+	switch cardinalDirection
+		{
+			case 0: sprite_index = sLouisRight; break;
+			case 1: sprite_index = sLouisUp; break;
+			case 2: sprite_index = sLouisLeft; break;
+			case 3: sprite_index = sLouisDown; break;
+		}
+}
+function UpdateSpriteIndexRonald()
+{	
+	image_speed = .25;
+	cardinalDirection = round(Dir/90);
+	switch cardinalDirection
+		{
+			case 0: sprite_index = sRonaldRight; break;
+			case 1: sprite_index = sRonaldUp; break;
+			case 2: sprite_index = sRonaldLeft; break;
+			case 3: sprite_index = sRonaldDown; break;
+		}
+}
+function UpdateSpriteIndexClifford()
+{	
+	image_speed = .25;
+	cardinalDirection = round(Dir/90);
+	switch cardinalDirection
+		{
+			case 0: sprite_index = sCliffordRight; break;
+			case 1: sprite_index = sCliffordUp; break;
+			case 2: sprite_index = sCliffordLeft; break;
+			case 3: sprite_index = sCliffordDown; break;
+		}
 }
 function scActivate() 
 {
@@ -65,17 +102,4 @@ function scActivate()
 	//show_debug_message(string(_inst));
 	#endregion
 	scSaySomething(_inst);
-}
-function PlayerAnimateSprite()
-{
-var _totalFrames = sprite_get_number(sprite_index) / 4;
-image_index = localFrame + (CARDINAL_DIR * _totalFrames);
-localFrame += sprite_get_speed(sprite_index) / FRAME_RATE;
-
-//If animation would loop on next game step
-if (localFrame >= _totalFrames)
-{
-	animationEnd = true;
-	localFrame -= _totalFrames;
-}else animationEnd = false;
 }
