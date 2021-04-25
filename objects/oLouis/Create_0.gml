@@ -4,5 +4,6 @@ walkSpeed = 1.5;
 playerDirection = 0;
 cardinalDirection = 0;
 distanceAhead = 18;
+localFrame = 0;
 
 prettyBusyRN = false;

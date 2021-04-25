@@ -123,7 +123,10 @@ function scGetTheText(_line)
 		case 34: scDrawTheObject("I'm hungry, where are the rations?",0,global.medium,c_white,fRonald,.1); break;
 		case 35: scDrawTheObject("So hungry...",36,global.slow,c_white,fClifford,2); break;
 		case 36: scDrawTheObject("Will you please find the 5 rations?",0,global.medium,c_white,fClifford,.5); break;
-		case 37: scDrawTheObject("The rations! You found them!",38,global.fast,c_white,fClifford,.5) break;
+		case 37: 
+			scDrawTheObject("The rations! You found them!",38,global.fast,c_white,fClifford,.5) 
+			instance_create_layer(384,576,"Instances",oKnife);
+			break;
 		case 38: scDrawTheObject("Thank you. There's not very many though...",39,global.medium,c_white,fClifford,.5) break;
 		case 39: scDrawTheObject("Let's bide our time until rescue comes...Maybe take a look around?",40,global.medium,c_white,fClifford,.5) break;
 		case 40: scDrawTheObject("Rescue isn't coming you IDIOT! They're all gone.",41,global.fast,c_blue,fRonald,1) break;

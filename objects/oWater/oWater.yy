@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Instances",
+    "path": "folders/Objects/Instances.yy",
   },
   "resourceVersion": "1.0",
   "name": "oWater",

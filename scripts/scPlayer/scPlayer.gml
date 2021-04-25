@@ -23,7 +23,8 @@ function GetPlayerMovement()
 		if (hMove = -1) playerDirection = 180;
 		if (hMove = 1) playerDirection = 0;
 		//show_debug_message(playerDirection);
-		UpdateSpriteIndex();	
+		UpdateSpriteIndex();
+		PlayerAnimateSprite();
 	}
 	if (vMove != 0)
 	{
@@ -64,4 +65,17 @@ function scActivate()
 	//show_debug_message(string(_inst));
 	#endregion
 	scSaySomething(_inst);
+}
+function PlayerAnimateSprite()
+{
+var _totalFrames = sprite_get_number(sprite_index) / 4;
+image_index = localFrame + (CARDINAL_DIR * _totalFrames);
+localFrame += sprite_get_speed(sprite_index) / FRAME_RATE;
+
+//If animation would loop on next game step
+if (localFrame >= _totalFrames)
+{
+	animationEnd = true;
+	localFrame -= _totalFrames;
+}else animationEnd = false;
 }

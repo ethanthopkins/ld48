@@ -1,8 +1,8 @@
 val = 0;
 valSp = .005;
-Color = c_maroon;
+Color = c_red;
 Min = .2;
-Max = .4;
+Max = .5;
 in = true;
 destroy = false;
 ready = false;

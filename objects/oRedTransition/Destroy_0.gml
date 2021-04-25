@@ -1,1 +1,2 @@
-draw_set_alpha(1);
+val = 1;
+global.playerPaused = false;

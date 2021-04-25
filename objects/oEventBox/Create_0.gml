@@ -1,1 +1,2 @@
 iHaveKnife = false;
+set = false;

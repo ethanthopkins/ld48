@@ -46,7 +46,7 @@
     {"id":{"name":"obj_light","path":"objects/obj_light/obj_light.yy",},"order":0,},
     {"id":{"name":"light_create","path":"scripts/light_create/light_create.yy",},"order":5,},
     {"id":{"name":"spr_light_line","path":"sprites/spr_light_line/spr_light_line.yy",},"order":4,},
-    {"id":{"name":"oWater","path":"objects/oWater/oWater.yy",},"order":25,},
+    {"id":{"name":"oWater","path":"objects/oWater/oWater.yy",},"order":5,},
     {"id":{"name":"oWindowPatch","path":"objects/oWindowPatch/oWindowPatch.yy",},"order":4,},
     {"id":{"name":"light_destroy","path":"scripts/light_destroy/light_destroy.yy",},"order":11,},
     {"id":{"name":"sWallDown","path":"sprites/sWallDown/sWallDown.yy",},"order":14,},

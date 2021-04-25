@@ -11,10 +11,17 @@ if (place_meeting(x,y,oLouis))
 		if (global.knife)
 		{
 			(instance_create_layer(0,0,layer,oRedTransition))
+			if (!set)
+			{
+			global.justForShow = true;
+			timeline_index = tlBloodInWater;
+			timeline_position = 0;
+			timeline_running = true;	
+			set = true;
+			}
 			audio_play_sound(snKnife,5,true);
 			oLouis.walkSpeed = .75
 			instance_destroy();
-			global.iHaveKnife = true;
 		}
 	}
 }else return;

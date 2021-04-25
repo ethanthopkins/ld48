@@ -1,3 +1,5 @@
+#macro CARDINAL_DIR round(direction/90)
+#macro FRAME_RATE 60
 #region Game Impacting
 	global.firstDay = true;
 	global.pathBlocker = undefined;
