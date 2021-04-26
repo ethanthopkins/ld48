@@ -1,5 +1,7 @@
-draw_rectangle_color(0,0,display_get_width(),display_get_height(),c_dkgray,c_gray,c_dkgray,c_gray,false);
+draw_set_alpha(.3);
+draw_rectangle_color(0,0,display_get_width(),display_get_height(),c_white,c_white,c_white,c_white,false);
 
+draw_set_alpha(1);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_set_halign(fa_center);

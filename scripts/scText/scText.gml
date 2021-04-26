@@ -133,8 +133,11 @@ function scGetTheText(_line)
 			global.waterSpeed = global.normal;
 			global.weLockedIn = false;
 			break;
-		case 30: scDrawTheObject("You peer out the bulletproof glass",31,global.medium,c_white,fDefault,.1); break;
-		case 31: scDrawTheObject("You see the ocean rise and you sink.",0,global.medium,c_white,fDefault,.1); break;
+		case 30: 
+			scDrawTheObject("You peer out the bulletproof glass",31,global.medium,c_white,fDefault,.1); 
+		//	layer_set_visible("outside", true);
+			break;
+		case 31: scDrawTheObject("You see the ocean rise as you sink.",0,global.medium,c_white,fDefault,.1); break;
 		default: return;
 		case 32: 
 			with (instance_create_layer(0,0,"lightrender",oTransition)) destroy = true; 
@@ -174,7 +177,7 @@ function scGetTheText(_line)
 		case 53: scDrawTheObject("That window is still leaking a bit but not as much.",54,global.medium,c_white,fDefault,.01) break;
 		case 54: scDrawTheObject("There's no way to stop the leaking completely.",0,global.medium,c_white,fDefault,.01) break;
 		case 55: scDrawTheObject("The sound of a mouse comes from inside the barrel.",56,global.medium,c_white,fDefault,.01) break;
-		case 56: scDrawTheObject("*ew*",0,global.slow,c_white,fEw,1) break;
+		case 56: scDrawTheObject("*ew*",0,global.slow,c_white,fEw,5) break;
 		case 57: scDrawTheObject("hmm I wonder if there are...",58,global.medium,c_white,fDefault,1) break;
 		case 58: scDrawTheObject("BETTER THINGS TO BE DOING THAN LOOKING OUT THIS WINDOW RN!",0,global.medium,c_white,fDefault,1) break;
 		case 59: scDrawTheObject("Make it quick and return to the deck.",0,global.medium,c_white,fDefault,.01) break;
@@ -183,6 +186,7 @@ function scGetTheText(_line)
 			instance_create_layer(0,0,"lightrender",oTransition2);
 			break;
 		case 61: oClifford.timeOut = false; global.playerPaused = false; break;
+		case 62: layer_set_visible("outside", false); global.playerPaused = false; break;
 
 	}
 }
