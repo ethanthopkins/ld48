@@ -14,6 +14,13 @@ function scGetTheCharacter(instance)
 	if (instance_exists(oKnife)) var _oKnife = oKnife.id; else _oKnife = undefined;
 	if (instance_exists(oTape)) var _oTape = oTape.id; else _oTape = undefined;
 	if (instance_exists(oWindowPatch)) var _oWindowPatch = oWindowPatch.id; else _oWindowPatch = undefined;
+	if ((instance.object_index) == oWindow) var _oWindow = instance.id; else _oWindow = undefined;	
+	if ((instance.object_index) == oBarrel) var _oBarrel = instance.id; else _oBarrel = undefined;	
+	if (instance_exists(oWater)) 
+	{
+		if ((instance.object_index) == oWater) var _oWater = instance.id;  
+	} else _oWater = undefined;	
+	
 	switch (instance)
 	{
 		case noone: return; 
@@ -36,11 +43,20 @@ function scGetTheCharacter(instance)
 			break;
 		case _oTape: return(23);
 		case _oWindowPatch: 
-			if (global.tape) return(29)
+			if (global.tape) return(44)
 			else
 			{
-				if (global.windowBroken) return(27); else return(30);	
+				if (global.windowBroken) return(27); else return(53);	
 			}
+		case _oWater:
+			if (room == rRoom2) return(42);
+		case _oWindow:
+			if (room == rRoom1) && (!global.windowBroken) return(46);
+			if (room == rRoom2) return(30);
+		case _oBarrel:
+			if (room == rRoom1) && (!global.windowBroken) return(choose(48,55));
+			if (room == rRoom1) && (global.windowBroken) return(50);
+			if (room == rRoom2) return(52);
 		default: return;
 	}
 }
@@ -65,7 +81,12 @@ function scGetTheText(_line)
 		case 8: scDrawTheObject("Sailor Louis, state your business Why are you down here?",9,global.medium,c_white,fClifford,.1); break;
 		case 9: scDrawTheObject("Captain sent you for supplies??",10,global.medium,c_white,fClifford,.1); break;
 		case 10: scDrawTheObject("You may enter the cabin.",11,global.medium,c_white,fClifford,.1); break;
-		case 11: scDrawTheObject("Supplies are to the end left.",12,global.medium,c_white,fClifford,.1); break;
+		case 11: 
+			scDrawTheObject("Supplies are to the end left.",12,global.medium,c_white,fClifford,.1); 
+			timeline_index = tlTakingSoLong;
+			timeline_position = 0;
+			timeline_running = true;
+			break;
 		case 12: global.firstDay = false; global.playerPaused = false; break;
 		case 13: scDrawTheObject("We--We're locked in.......",14,global.medium,c_blue,fClifford,.1); break;
 		case 14: 
@@ -86,9 +107,9 @@ function scGetTheText(_line)
 		case 21: scDrawTheObject("Please hurry!",0,global.medium,c_white,fRonald,.1); break;
 		case 22: scDrawTheObject("Louis, check with Ronald.",0,global.medium,c_white,fClifford,.1); break;
 		case 23: scDrawTheObject("A Large Spool of Tape.",24,global.medium,c_white,fDefault,.1); break;
-		case 24: scDrawTheObject("Take?",0,global.medium,c_white,fDefault,0,25,"Yes",0,"No"); break;
+		case 24: scDrawTheObject("Take? (it's offbrand)",0,global.medium,c_white,fDefault,0,25,"Yes :)",0,"No :("); break;
 		case 25: 
-			scDrawTheObject("You take the tape.",0,global.medium,c_white,fDefault,0); 
+			scDrawTheObject("You take the tape...even though it's offbrand",0,global.medium,c_white,fDefault,0); 
 			global.tape = true;
 			with (oTape) instance_destroy();
 			break;
@@ -99,22 +120,14 @@ function scGetTheText(_line)
 			scDrawTheObject("The tape patches the window for now",32,global.medium,c_blue,fDefault,.3); 
 			global.tape = false;
 			global.windowBroken = false;
-			global.waterSpeed = .0025;
-			/*
-			oClifford.x = 768;
-			oClifford.y = 384;
-			oRonald.x = 896;
-			oRonald.y = 384;
-			oLouis.x = 832;
-			oLouis.y = 352;			
-			*/
+			global.waterSpeed = global.normal;
 			global.weLockedIn = false;
 			break;
 		case 30: scDrawTheObject("You peer out the bulletproof glass",31,global.medium,c_white,fDefault,.1); break;
 		case 31: scDrawTheObject("You see the ocean rise and you sink.",0,global.medium,c_white,fDefault,.1); break;
 		default: return;
 		case 32: 
-			with (instance_create_layer(0,0,layer,oTransition)) destroy = true; 
+			with (instance_create_layer(0,0,"lightrender",oTransition)) destroy = true; 
 			if (audio_is_playing(snFight))
 			{
 				audio_stop_sound(snFight);	
@@ -131,6 +144,21 @@ function scGetTheText(_line)
 		case 39: scDrawTheObject("Let's bide our time until rescue comes...Maybe take a look around?",40,global.medium,c_white,fClifford,.5) break;
 		case 40: scDrawTheObject("Rescue isn't coming you IDIOT! They're all gone.",41,global.fast,c_blue,fRonald,1) break;
 		case 41: scDrawTheObject("Don't listen to him.",0,global.fast,c_white,fClifford,.5) break;
+		case 42: scDrawTheObject("The water mindlessly but intently continues to consume your ship",43,global.medium,c_blue,fDefault,.05) break;
+		case 43: scDrawTheObject("You get a chill from the cold",0,global.medium,c_blue,fDefault,.05) break;
+		case 44: scDrawTheObject("It all seems so surreal as you stare at the water entering your ship.",45,global.medium,c_blue,fDefault,.05) break;
+		case 45: scDrawTheObject("The cries of your distressed crewmates snap you out of it.",29,global.medium,c_blue,fDefault,.05) break;
+		case 46: scDrawTheObject("You can see the docks from afar",47,global.medium,c_white,fDefault,.01) break;
+		case 47: scDrawTheObject("A wave of nostalgia hits you then departs.",0,global.medium,c_white,fDefault,.01) break;
+		case 48: scDrawTheObject("The metallic smell of gun powder emanates from the barrel.",49,global.medium,c_white,fDefault,.01) break;
+		case 49: scDrawTheObject("Nothing you're not used to by this point.",0,global.medium,c_white,fDefault,.01) break;
+		case 50: scDrawTheObject("This gun powder will be useless soon.",51,global.medium,c_white,fDefault,.01) break;
+		case 51: scDrawTheObject("I wonder if the commanders will think there's anything of value down here.",0,global.medium,c_white,fDefault,.01) break;
+		case 52: scDrawTheObject("I wish these barrels were full of food not gun powder.",0,global.medium,c_white,fDefault,.01) break;
+		case 53: scDrawTheObject("That window is still leaking a bit but not as much.",54,global.medium,c_white,fDefault,.01) break;
+		case 54: scDrawTheObject("There's no way to stop the leaking completely.",0,global.medium,c_white,fDefault,.01) break;
+		case 55: scDrawTheObject("The sound of a mouse comes from inside the barrel.",56,global.medium,c_white,fDefault,.01) break;
+		case 56: scDrawTheObject("*ew*",0,global.slow,c_white,fEw,1) break;
 	}
 }
 function scDrawTheObject(txt,nxtLine,Speed, Color, Font,shakeInt,response1Case,response1,response2case,response2)

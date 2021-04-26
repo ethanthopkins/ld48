@@ -1,5 +1,5 @@
 {
-  "bboxMode": 1,
+  "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
   "origin": 0,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3a68297f-5261-405d-bf1b-dff7ee698b20","path":"sprites/sKnife/sKnife.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3a68297f-5261-405d-bf1b-dff7ee698b20","path":"sprites/sKnife/sKnife.yy",},"LayerId":{"name":"89d640ac-6d28-4e0e-8a04-b019c941f25c","path":"sprites/sKnife/sKnife.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKnife","path":"sprites/sKnife/sKnife.yy",},"resourceVersion":"1.0","name":"3a68297f-5261-405d-bf1b-dff7ee698b20","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f9704c3e-e268-49e3-b31b-71ccb4e68f06","path":"sprites/sShadow/sShadow.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f9704c3e-e268-49e3-b31b-71ccb4e68f06","path":"sprites/sShadow/sShadow.yy",},"LayerId":{"name":"f516cddd-7eb5-47b8-985e-19d7a03345ba","path":"sprites/sShadow/sShadow.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sShadow","path":"sprites/sShadow/sShadow.yy",},"resourceVersion":"1.0","name":"f9704c3e-e268-49e3-b31b-71ccb4e68f06","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sKnife","path":"sprites/sKnife/sKnife.yy",},
+    "spriteId": {"name":"sShadow","path":"sprites/sShadow/sShadow.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"27ce5732-1acd-42a0-9b69-9c657b037a03","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3a68297f-5261-405d-bf1b-dff7ee698b20","path":"sprites/sKnife/sKnife.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f4c7537d-4818-4d4e-8a8b-79cda49b3a26","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f9704c3e-e268-49e3-b31b-71ccb4e68f06","path":"sprites/sShadow/sShadow.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sKnife","path":"sprites/sKnife/sKnife.yy",},
+    "parent": {"name":"sShadow","path":"sprites/sShadow/sShadow.yy",},
     "resourceVersion": "1.3",
-    "name": "sKnife",
+    "name": "sShadow",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"89d640ac-6d28-4e0e-8a04-b019c941f25c","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f516cddd-7eb5-47b8-985e-19d7a03345ba","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Instances",
-    "path": "folders/Sprites/Instances.yy",
+    "name": "Lighting",
+    "path": "folders/Sprites/Lighting.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sKnife",
+  "name": "sShadow",
   "tags": [],
   "resourceType": "GMSprite",
 }

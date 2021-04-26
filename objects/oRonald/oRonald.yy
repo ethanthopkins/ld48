@@ -5,7 +5,10 @@
   },
   "solid": true,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sRonaldDown",
+    "path": "sprites/sRonaldDown/sRonaldDown.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "pTalk",

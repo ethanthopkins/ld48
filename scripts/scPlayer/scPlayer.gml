@@ -61,27 +61,27 @@ function UpdateSpriteIndex()
 }
 function UpdateSpriteIndexRonald()
 {	
-	image_speed = .25;
-	cardinalDirection = round(Dir/90);
+	image_speed = .2;
+	cardinalDirection = round(direction/90);
 	switch cardinalDirection
-		{
-			case 0: sprite_index = sRonaldRight; break;
-			case 1: sprite_index = sRonaldUp; break;
-			case 2: sprite_index = sRonaldLeft; break;
-			case 3: sprite_index = sRonaldDown; break;
-		}
+	{
+		case 0: sprite_index = sRonaldRight; break;
+		case 1: sprite_index = sRonaldUp; break;
+		case 2: sprite_index = sRonaldLeft; break;
+		case 3: sprite_index = sRonaldDown; break;
+	}
 }
 function UpdateSpriteIndexClifford()
 {	
-	image_speed = .25;
-	cardinalDirection = round(Dir/90);
+	image_speed = .2;
+	cardinalDirection = round(direction/90);
 	switch cardinalDirection
-		{
-			case 0: sprite_index = sCliffordRight; break;
-			case 1: sprite_index = sCliffordUp; break;
-			case 2: sprite_index = sCliffordLeft; break;
-			case 3: sprite_index = sCliffordDown; break;
-		}
+	{
+		case 0: sprite_index = sCliffordRight; break;
+		case 1: sprite_index = sCliffordUp; break;
+		case 2: sprite_index = sCliffordLeft; break;
+		case 3: sprite_index = sCliffordDown; break;
+	}
 }
 function scActivate() 
 {

@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sWindow",
-    "path": "sprites/sWindow/sWindow.yy",
+    "name": "sShadow",
+    "path": "sprites/sShadow/sShadow.yy",
   },
-  "solid": true,
-  "visible": true,
+  "solid": false,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "pTalk",
-    "path": "objects/pTalk/pTalk.yy",
+    "name": "obj_shadow_caster",
+    "path": "objects/obj_shadow_caster/obj_shadow_caster.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,15 +23,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Instances",
-    "path": "folders/Objects/Instances.yy",
+    "name": "Lighting",
+    "path": "folders/Objects/Lighting.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oWindow",
+  "name": "oShadowCaster",
   "tags": [],
   "resourceType": "GMObject",
 }

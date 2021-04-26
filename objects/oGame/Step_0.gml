@@ -17,6 +17,8 @@ if (global.underAttack)
 				(audio_play_sound(snFight,1,true));
 			}
 		}
+		timeline_index = tlTakingSoLong;
+		timeline_running = false;
 		timeline_index = tlUnderAttack;
 		timeline_position = 0;
 		timeline_running = true;

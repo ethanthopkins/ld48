@@ -1,4 +1,4 @@
 in = false;
 global.quickTheDoor = false;
-global.waterGaugePercent = .4;
+oWaterMeter.waterGaugeCurrent = 40;
 room_goto(rRoom2);

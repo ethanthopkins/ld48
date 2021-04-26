@@ -10,3 +10,8 @@ instance_create_layer(1152,64,"Instances",oWall);
 instance_create_layer(1184,64,"Instances",oWall);
 instance_create_layer(1152,96,"Instances",oWall);
 instance_create_layer(1184,96,"Instances",oWall);
+
+instance_create_layer(1184,128,"Instances",oWater);
+instance_create_layer(1024,128,"Instances",oWater);
+instance_create_layer(992,128,"Instances",oWater);
+instance_create_layer(1056,128,"Instances",oWater);

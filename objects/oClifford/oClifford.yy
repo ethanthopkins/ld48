@@ -5,7 +5,10 @@
   },
   "solid": true,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sCliffordDown",
+    "path": "sprites/sCliffordDown/sCliffordDown.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "pTalk",

@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "pTalk",
+    "path": "objects/pTalk/pTalk.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
