@@ -3,7 +3,7 @@
     "name": "sRonaldRight",
     "path": "sprites/sRonaldRight/sRonaldRight.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": true,
   "spriteMaskId": {
     "name": "sRonaldDown",

@@ -5,6 +5,14 @@ if (global.waterGaugePercent == 1)
 	global.playerPaused = true;
 }
 if (!global.firstDay) instance_destroy(global.pathBlocker);
+if (takingSoLong) 
+{
+	timeline_index = tlTakingSoLong;
+	timeline_position = 0;
+	timeline_running = true;
+	takingSoLong = false;
+	takingSoLong2 = true;
+}
 if (global.underAttack)
 {
 	if (!set)
@@ -25,10 +33,14 @@ if (global.underAttack)
 	//	if !timeline_loop timeline_loop = true;
 		set = true;
 		instance_create_layer(0,0,layer,oWaterMeter);
-		instance_create_layer(1024,96,layer,oWindowPatch);
+		instance_create_layer(1024,96,"Col",oWindowPatch);
 	}
 }
-if (global.windowBroken) global.waterSpeed = .005;
+
+if (global.windowBroken) 
+{
+	global.waterSpeed = .005;
+}
 if (global.rations)
 {
 	if (!set2)
@@ -44,6 +56,18 @@ if (global.rations)
 	{
 		global.rations = false;
 		global.rationsFound = true;
+		audio_play_sound(snFoundAll,10,false);
+	}
+}
+if (room == rRoom3)
+{
+	if (!set4)
+	{
+		if (audio_is_playing(snRadiator)) audio_stop_sound(snRadiator);
+		timeline_index = tlYourFault;
+		timeline_position = 0;
+		timeline_running = true;
+		set4 = true;	
 	}
 }
 if (room == rRoom2)
@@ -57,3 +81,11 @@ if (room == rRoom2)
 		set3 = true;
 	}
 }
+if (room == rIntro)
+{
+	if (keyboard_check_pressed(vk_anykey))
+	{
+		room = rRoom1;	
+	}
+}
+//if (instance_exists(oText)) show_message("text exists");

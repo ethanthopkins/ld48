@@ -1,4 +1,5 @@
 draw_self();
+/*
 if (playerDirection == 0) || (playerDirection == 180)
 {
 	draw_line(x,y,x+lengthdir_x(activateDistance,playerDirection),y+lengthdir_y(activateDistance,playerDirection));

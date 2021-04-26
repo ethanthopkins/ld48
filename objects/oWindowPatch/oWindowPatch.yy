@@ -1,10 +1,10 @@
 {
   "spriteId": {
-    "name": "sGoal",
-    "path": "sprites/sGoal/sGoal.yy",
+    "name": "sWindowPatch",
+    "path": "sprites/sWindowPatch/sWindowPatch.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

@@ -2,9 +2,13 @@ if (place_meeting(x,y,oLouis))
 {
 	if (underAttack)
 	{
-		global.underAttack = true;
-		global.justForShow = true;
-		instance_destroy();
+		if (!oShelf.full)
+		{
+			global.underAttack = true;
+			global.justForShow = true;
+			oGame.takingSoLong2 = false;
+			instance_destroy();
+		}
 	}
 	if (knife)
 	{

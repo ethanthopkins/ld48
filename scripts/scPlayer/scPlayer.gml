@@ -101,5 +101,5 @@ function scActivate()
 	}
 	//show_debug_message(string(_inst));
 	#endregion
-	scSaySomething(_inst);
+	if (_inst != noone)	scSaySomething(_inst);
 }

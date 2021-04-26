@@ -1,0 +1,1 @@
+if (global.grid != undefined) mp_grid_destroy(global.grid);

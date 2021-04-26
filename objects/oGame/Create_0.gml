@@ -2,6 +2,8 @@
 #macro FRAME_RATE 60
 #region Game Impacting
 	global.firstDay = true;
+	takingSoLong = false;
+	takingSoLong2 = false;
 	global.pathBlocker = undefined;
 	global.underAttack = false;
 	global.quickTheDoor = false;
@@ -12,6 +14,9 @@
 	global.rations = false;
 	global.rationsFound = false;
 	global.iHaveKnife = false;
+	global.brokenWindow = undefined;
+	global.theChase = false;
+	global.grid = undefined;
 	currentRations = 0;
 #endregion
 global.iCamera = instance_create_layer(0,0,layer,oCamera);
@@ -19,6 +24,7 @@ set = false;
 set1 = false;
 set2 = false;
 set3 = false;
+set4 = false;
 global.windowWidth = window_get_width();
 global.windowHeight = window_get_height();
 global.playerPaused = false;
@@ -26,7 +32,7 @@ inst = 0;
 whatText = undefined;
 theActualText = undefined;
 global.oldLine = 0;
-room = rRoom1;
+room = rIntro;
 //text speeds
 global.slow = .15;
 global.medium = .25;

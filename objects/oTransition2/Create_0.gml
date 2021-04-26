@@ -4,5 +4,5 @@ Color = c_black;
 Min = .2;
 Max = .9;
 in = true;
-destroy = false;
+destroy = true;
 ready = false;

@@ -3,7 +3,7 @@
     "name": "sWater",
     "path": "sprites/sWater/sWater.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,

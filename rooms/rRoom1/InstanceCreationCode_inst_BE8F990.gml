@@ -1,1 +1,1 @@
-direction = 90;
+direction = 270;
