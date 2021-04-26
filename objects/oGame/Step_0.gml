@@ -88,4 +88,13 @@ if (room == rIntro)
 		room = rRoom1;	
 	}
 }
+if (global.theEnd)
+{
+	if (!set5)
+	{
+		if (audio_is_playing(snKnife)) audio_stop_sound(snKnife);
+		room = rEnd;
+		set5 = true;
+	}
+}
 //if (instance_exists(oText)) show_message("text exists");

@@ -29,6 +29,10 @@ for (var i = 1; i <= length; ++i)
 	{
 		var sLength = string_width(myString);
 		//show_debug_message("length_so_far: " + string(length_so_far) + "width: " + string(width));
+		//CHECK IF STRING IS OVER TEXTBOX. ALL LETTERS THAT EXCEED TEXTBOX ARE SENT TO NEXT LINE.
+		//todo: check which letter is at textbox.
+		//if it's not a space, go back until a space is found.
+		//set that at the part where it is going to be sent to next line.
 		if (length_so_far >= width)
 		{
 			if (!set1)

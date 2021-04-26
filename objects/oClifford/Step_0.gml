@@ -23,5 +23,5 @@ if (global.theChase)
 		{
 			path_start(myPath,Speed,path_action_stop,true);
 		}
-	} else Speed = 0; return;
+	} else path_end();
 }

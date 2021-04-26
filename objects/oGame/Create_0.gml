@@ -17,6 +17,7 @@
 	global.brokenWindow = undefined;
 	global.theChase = false;
 	global.grid = undefined;
+	global.theEnd = false;
 	currentRations = 0;
 #endregion
 global.iCamera = instance_create_layer(0,0,layer,oCamera);
@@ -25,6 +26,7 @@ set1 = false;
 set2 = false;
 set3 = false;
 set4 = false;
+set5 = false;
 global.windowWidth = window_get_width();
 global.windowHeight = window_get_height();
 global.playerPaused = false;
