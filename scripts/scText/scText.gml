@@ -80,6 +80,8 @@ function scGetTheText(_line)
 		case 5: 
 			scDrawTheObject("You take the blade",61,global.slow,c_red,fKiller,1); 
 			global.knife = true;
+			if (instance_exists(oExclamationBlade)) {instance_destroy(oExclamationBlade);}
+			instance_create_layer(0,0,layer,oBladeDirections);
 			with (oKnife) instance_destroy();
 			break;
 		case 6: scDrawTheObject("WHAT HAPPENED?!",7,global.fast,c_white,fClifford,1); break;
@@ -112,7 +114,10 @@ function scGetTheText(_line)
 			global.quickTheDoor = false;
 			global.weLockedIn = true; 
 			break;
-		case 19: scDrawTheObject("Tape could patch the window up.",20,global.medium,c_white,fRonald,.1); break;
+		case 19: 
+			scDrawTheObject("Tape could patch the window up.",20,global.medium,c_white,fRonald,.1); 
+			instance_create_layer(0,0,layer,oExclamationTape);
+			break;
 		case 20: scDrawTheObject("I--I think there's some in the bottom right of the ship",21,global.medium,c_white,fRonald,.1); break;
 		case 21: scDrawTheObject("Please hurry!",0,global.medium,c_white,fRonald,.1); break;
 		case 22: scDrawTheObject("Louis, check with Ronald.",18,global.medium,c_blue,fClifford,.1); break;
@@ -120,6 +125,7 @@ function scGetTheText(_line)
 		case 24: scDrawTheObject("Take? (it's offbrand)",0,global.medium,c_white,fDefault,0,25,"Yes :)",0,"No :("); break;
 		case 25: 
 			scDrawTheObject("You take the tape...even though it's offbrand",0,global.medium,c_white,fDefault,0); 
+			if (instance_exists(oTape)) {instance_destroy(oExclamationTape);}
 			global.tape = true;
 			with (oTape) instance_destroy();
 			break;

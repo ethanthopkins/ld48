@@ -1,4 +1,7 @@
-if (!audio_is_playing(snFight)) {(audio_play_sound(snRadiator,1,true));}
+if (room != rRoom3)
+{
+	if (!audio_is_playing(snFight)) {(audio_play_sound(snRadiator,1,true));}
+}
 if (global.waterGaugePercent == 1) 
 {
 	global.gameOver = true;
@@ -47,7 +50,7 @@ if (global.rations)
 	{
 		instance_create_layer(576,416,layer,oRation);
 		instance_create_layer(128,512,layer,oRation);
-		instance_create_layer(128,192,layer,oRation);
+		instance_create_layer(192,192,layer,oRation);
 		instance_create_layer(608,288,layer,oRation);
 		instance_create_layer(704,576,layer,oRation);
 		set2 = true;
@@ -93,6 +96,7 @@ if (global.theEnd)
 	if (!set5)
 	{
 		if (audio_is_playing(snKnife)) audio_stop_sound(snKnife);
+		if (instance_exists(oWaterMeter)) instance_destroy(oWaterMeter);
 		room = rEnd;
 		set5 = true;
 	}
