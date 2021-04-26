@@ -85,10 +85,10 @@ function scGetTheText(_line)
 		case 6: scDrawTheObject("WHAT HAPPENED?!",7,global.fast,c_white,fClifford,1); break;
 		case 7: scDrawTheObject("Are we under ATTACK?!",0,global.fast,c_white,fClifford,1); break;
 		case 8: scDrawTheObject("Sailor Louis, state your business Why are you down here?",9,global.medium,c_white,fClifford,.1); break;
-		case 9: scDrawTheObject("Captain sent you for supplies??",10,global.medium,c_white,fClifford,.1); break;
-		case 10: scDrawTheObject("You may enter the cabin.",11,global.medium,c_white,fClifford,.1); break;
+		case 9: scDrawTheObject("Captain sent you for supplies? Why would he do that?",10,global.medium,c_white,fClifford,.1); break;
+		case 10: scDrawTheObject("You may enter the cabin. Just make it quick please.",11,global.medium,c_white,fClifford,.1); break;
 		case 11: 
-			scDrawTheObject("Supplies are to the left on the end.",12,global.medium,c_white,fClifford,.1); 
+			scDrawTheObject("Supplies are to the left on the end. Don't dally.",12,global.medium,c_white,fClifford,.1); 
 			oGame.takingSoLong = true;
 			break;
 		case 12: global.firstDay = false; global.playerPaused = false; break;

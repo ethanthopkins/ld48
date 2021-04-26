@@ -35,75 +35,54 @@ for (var i = 1; i <= length; ++i)
 		//set that at the part where it is going to be sent to next line.
 		
 		//IF THE LENGTH SO FAR IS GREATER THEN THE TEXT BOX
-		var strLength = string_copy(myString,1,i);
-		if (length_so_far >= width) 
-		{
-			if (!set3)
-			{
-				if (string_copy(myString,1,strPos) == strLength)
-				{
-					var lastLetter = string_char_at(strLength,string_length(strLength));
-					lastLetterPos = strPos;
-					set3 = true;
-				}	
-			}
-		}
-		if (sLength >= width)
+		if (length_so_far >= width)
 		{
 			//GET THE LAST LETTER
 			if (!set2)
 			{
+				var strLength = string_copy(myString,1,i);
 				show_debug_message("strLength: " + string(strLength) + " & strPos: " + string(string_copy(myString,1,strPos)));
+				if (string_copy(myString,1,strPos) == strLength)
+				{
+					var lastLetter = string_char_at(strLength,string_length(strLength));
+					lastLetterPos = strPos;
+				}
 				set2 = true;
 			}
-			show_debug_message(lastLetterPos);
 			if (string_char_at(myString,lastLetterPos) == " ")
 			{			
-				var j = i;
-				var sLength_so_far;
-				sLength_so_far=string_width(string_copy(myString,1,j))
-				//show_debug_message("sLength_so_far: " + string(sLength_so_far) + " & last letter width: " + string(string_width(string_copy(myString,1,lastLetterPos))));//string(string_char_at(myString,lastLetterPos)));
-			if (sLength_so_far >= string_width(string_copy(myString,1,lastLetterPos)))
+				show_debug_message("length_so_far: " + string(length_so_far) + " & last letter width: " + string(string_width(string_copy(myString,1,lastLetterPos))));//string(string_char_at(myString,lastLetterPos)));
+				if (length_so_far >= string_width(string_copy(myString,1,lastLetterPos)))
 				{
+					var j = i;
 					if (!set1)
 					{	
 						diff = length_so_far - width;
 						//show_debug_message(string(diff));
 						set1 = true;
 					}
-					
+						var sLength_so_far;
+						sLength_so_far=string_width(string_copy(myString,1,i))
 						draw_text(
-						global.windowWidth*.15+sLength_so_far+random_range(-intensity,intensity)-string_width(string_copy(myString,1,lastLetterPos)),
+						global.windowWidth*.15+sLength_so_far+random_range(-intensity,intensity)-width+diff,
 						global.windowHeight*.8 + random_range(-intensity,intensity),
-						str[j] 
+						str[i] 
 					);
-				} else
-				{
-					draw_text(
-					draw_x+length_so_far+random_range(-intensity,intensity),
-					draw_y+random_range(-intensity,intensity),
-					str[i],
-					);
-				}
+				} 
 			}else
-			{ 
+			{
 				if (lastLetterPos != 0)
 				{
 					lastLetterPos --;
-				}
-				draw_text(
-				draw_x+length_so_far+random_range(-intensity,intensity),
-				draw_y+random_range(-intensity,intensity),
-				str[i],
-				);
+				} else return;
 			}
-		} else
+		}else
 		{
-			draw_text(
-			draw_x+length_so_far+random_range(-intensity,intensity),
-			draw_y+random_range(-intensity,intensity),
-			str[i],
-			);
+		draw_text(
+		draw_x+length_so_far+random_range(-intensity,intensity),
+		draw_y+random_range(-intensity,intensity),
+		str[i],
+		);
 		}
 	}
 	if (rsp1Case != undefined) && (rsp1Text != undefined) && (rsp2Case != undefined) && (rsp2Text != undefined)

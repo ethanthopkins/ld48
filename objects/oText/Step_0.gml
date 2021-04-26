@@ -8,7 +8,7 @@ if (!global.justForShow)
 			if (nextLine != global.oldLine) 
 			{
 				global.oldLine = nextLine;
-				show_debug_message(nextLine);
+				//show_debug_message(nextLine);
 
 				scGetTheText(nextLine);
 			}
